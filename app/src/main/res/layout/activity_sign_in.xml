@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.authentication.SignInActivity">
+
+        <ImageView
+            android:id="@+id/loginScreenIV"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:src="@drawable/login_screen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Sign In"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginScreenIV" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameOrEmailTIL"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:errorEnabled="true"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:startIconDrawable="@drawable/ic_email_128dp"
+            app:startIconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="Username" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTIL"
+            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:errorEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock_72dp"
+            app:startIconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameOrEmailTIL">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signInBtn"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/purple_900"
+            android:text="Sign In"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTIL" />
+
+        <TextView
+            android:id="@+id/loginWithTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:textColor="@color/grey_40"
+            android:textStyle="bold"
+            android:text="or login with..."
+            app:layout_constraintEnd_toEndOf="@+id/signInBtn"
+            app:layout_constraintStart_toStartOf="@+id/signInBtn"
+            app:layout_constraintTop_toBottomOf="@+id/signInBtn" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginWithTV">
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:iconSize="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:cornerRadius="20dp"
+                android:backgroundTint="@color/grey_5"
+                app:icon="@drawable/ic_google_150dp"
+                app:iconGravity="textEnd"
+                app:iconTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button3"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:iconSize="30dp"
+                app:cornerRadius="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/grey_5"
+                app:icon="@drawable/ic_facebook_64dp"
+                app:iconGravity="textEnd"
+                app:iconTint="@null" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button4"
+                style="@style/Widget.Material3.Button.IconButton"
+                app:iconSize="30dp"
+                app:cornerRadius="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/grey_5"
+                app:icon="@drawable/ic_google_150dp"
+                app:iconGravity="textEnd"
+                app:iconTint="@null" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/newToFirstTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="New To FriendCorner?"
+            app:layout_constraintEnd_toStartOf="@+id/newToSecondTV"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/newToSecondTV"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Sign Up"
+            android:textColor="@color/purple_900"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/newToFirstTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/newToFirstTV"
+            app:layout_constraintTop_toTopOf="@+id/newToFirstTV" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

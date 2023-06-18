@@ -1,5 +1,6 @@
 package com.iluvorange.dream.friendcorner.screen.introduction
 
+import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +10,15 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.security.crypto.EncryptedSharedPreferences
+import androidx.security.crypto.MasterKey
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.iluvorange.dream.friendcorner.MainActivity
 import com.iluvorange.dream.friendcorner.R
 import com.iluvorange.dream.friendcorner.data.model.general.Images
 import com.iluvorange.dream.friendcorner.databinding.ActivityIntroductionBinding
+import com.iluvorange.dream.friendcorner.util.Const.IS_INTRO_SCREEN_SHOW_BEFORE
+import com.iluvorange.dream.friendcorner.util.Const.USER_SECRET_SHARED_PREFERENCES
 import com.iluvorange.dream.friendcorner.util.DataGenerator
 import com.iluvorange.dream.friendcorner.util.PageTransformer
 
@@ -66,6 +72,12 @@ class IntroductionActivity : AppCompatActivity() {
                 // move to next screen
                 viewPager.currentItem = current
             } else {
+                val masterKey = MasterKey.Builder(applicationContext, MasterKey.DEFAULT_MASTER_KEY_ALIAS).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build()
+                val encryptedSharedPreferences = EncryptedSharedPreferences.create(applicationContext, USER_SECRET_SHARED_PREFERENCES, masterKey, EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV, EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM)
+                encryptedSharedPreferences.edit().apply {
+                    putBoolean(IS_INTRO_SCREEN_SHOW_BEFORE, true)
+                }.apply()
+//                startActivity(Intent(this@IntroductionActivity, MainActivity::class.java))
                 finish()
             }
         }
