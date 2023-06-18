@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62396623122",
+    "project_id": "friendcornerapplication",
+    "storage_bucket": "friendcornerapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62396623122:android:a5644721e2a660369eabcb",
+        "android_client_info": {
+          "package_name": "com.iluvorange.dream.friendcorner.general"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62396623122-fe9s4k88fq5voa655cvm4su13a3nfrdn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqn-wz4viqzsLJQKq0E73WD31lhHL1BkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62396623122-fe9s4k88fq5voa655cvm4su13a3nfrdn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
