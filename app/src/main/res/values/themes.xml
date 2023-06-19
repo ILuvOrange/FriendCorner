@@ -28,4 +28,11 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="defaultFilledTextBoxLayoutStyle" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">#C9FFFFFF</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="cornerRadius">5dp</item>
+        <item name="errorEnabled">true</item>
+    </style>
 </resources>
