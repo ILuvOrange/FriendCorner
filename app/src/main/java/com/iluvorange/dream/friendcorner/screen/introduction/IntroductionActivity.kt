@@ -17,6 +17,7 @@ import com.iluvorange.dream.friendcorner.MainActivity
 import com.iluvorange.dream.friendcorner.R
 import com.iluvorange.dream.friendcorner.data.model.general.Images
 import com.iluvorange.dream.friendcorner.databinding.ActivityIntroductionBinding
+import com.iluvorange.dream.friendcorner.screen.authentication.SignInActivity
 import com.iluvorange.dream.friendcorner.util.Const.IS_INTRO_SCREEN_SHOW_BEFORE
 import com.iluvorange.dream.friendcorner.util.Const.USER_SECRET_SHARED_PREFERENCES
 import com.iluvorange.dream.friendcorner.util.DataGenerator
@@ -77,7 +78,7 @@ class IntroductionActivity : AppCompatActivity() {
                 encryptedSharedPreferences.edit().apply {
                     putBoolean(IS_INTRO_SCREEN_SHOW_BEFORE, true)
                 }.apply()
-//                startActivity(Intent(this@IntroductionActivity, MainActivity::class.java))
+                startActivity(Intent(this@IntroductionActivity, SignInActivity::class.java))
                 finish()
             }
         }
