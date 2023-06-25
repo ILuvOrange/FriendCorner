@@ -52,8 +52,10 @@ class SplashScreenActivity : AppCompatActivity() {
             override fun onAnimationEnd(animation: Animation?) {
                 if (isShowedIntroScreenBefore == true){
                     startActivity(Intent(this@SplashScreenActivity, SignInActivity::class.java))
+                    finish()
                 }else{
                     startActivity(Intent(this@SplashScreenActivity, IntroductionActivity::class.java))
+                    finish()
                 }
             }
             override fun onAnimationRepeat(animation: Animation?) {}

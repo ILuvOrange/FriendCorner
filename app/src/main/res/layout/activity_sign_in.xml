@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/grey_50"
         tools:context=".screen.authentication.SignInActivity">
 
         <ImageView
@@ -38,19 +39,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameOrEmailTIL"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            style="@style/defaultFilledTextBoxLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            app:errorEnabled="true"
-            app:boxStrokeWidthFocused="0dp"
-            app:boxStrokeWidth="0dp"
-            app:boxCornerRadiusTopStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
             app:startIconDrawable="@drawable/ic_email_128dp"
-            app:startIconTint="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -59,30 +54,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start"
+                android:maxLength="1"
                 android:hint="Username" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTIL"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox"
+            style="@style/defaultFilledTextBoxLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            app:boxCornerRadiusTopStart="20dp"
-            app:boxCornerRadiusTopEnd="20dp"
-            app:errorEnabled="true"
-            app:boxStrokeWidthFocused="0dp"
-            app:boxStrokeWidth="0dp"
             app:startIconDrawable="@drawable/ic_lock_72dp"
-            app:startIconTint="@null"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:passwordToggleEnabled="true"
             app:layout_constraintTop_toBottomOf="@+id/usernameOrEmailTIL">
 
             <com.google.android.material.textfield.TextInputEditText
+                style="@style/defaultFilledTextBoxTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:hint="Password" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +85,7 @@
             android:layout_height="60dp"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:backgroundTint="@color/purple_900"
+            android:backgroundTint="@color/deep_orange_900"
             android:text="Sign In"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="Sign Up"
-            android:textColor="@color/purple_900"
+            android:textColor="@color/deep_orange_A700"
             android:textStyle="bold"
             android:onClick="@{() ->signInViewModel.navigateToSignUp()}"
             app:layout_constraintBottom_toBottomOf="@+id/newToFirstTV"

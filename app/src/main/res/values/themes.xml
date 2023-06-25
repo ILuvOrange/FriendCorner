@@ -1,21 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.FriendCorner" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
         <!-- enable window content transitions -->
         <item name="android:windowActivityTransitions">true</item>
+        <!-- specify enter and exit transitions -->
+<!--        <item name="android:windowEnterTransition">@anim/slide_in_left</item>-->
+<!--        <item name="android:windowExitTransition">@anim/slide_out_left</item>-->
+
+
+
     </style>
 
-    <style name="Theme.FriendCorner" parent="Base.Theme.FriendCorner" />
+<!--    <style name="Theme.FriendCorner" parent="Base.Theme.FriendCorner" />-->
 
-    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
-        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
-        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
-    </style>
+<!--    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">-->
+<!--        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>-->
+<!--        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>-->
+<!--        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>-->
+<!--        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>-->
+<!--        <item name="android:windowContentTransitions">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.MyAnimTheme" parent="Theme.Material3.DayNight.NoActionBar">-->
+<!--        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>-->
+<!--    </style>-->
 
     <!--style for ripple library-->
     <style name="RippleStyleWhite">
@@ -40,9 +49,54 @@
     </style>
 
     <style name="defaultFilledTextBoxLayoutStyle" parent="Widget.Material3.TextInputLayout.FilledBox">
-        <item name="boxBackgroundColor">#C9FFFFFF</item>
-        <item name="boxStrokeWidthFocused">0dp</item>
-        <item name="cornerRadius">5dp</item>
+        <item name="boxBackgroundColor">@color/textfield_filled_background_color</item>
+        <item name="boxStrokeColor">@color/default_text_input_layout_box_stroke_color</item>
+        <item name="boxStrokeWidth">0dp</item>
         <item name="errorEnabled">true</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="startIconTint">@null</item>
     </style>
+
+
+    <style name="defaultFilledTextBoxTextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+<!--    <style name="Widget.Material3.TextInputLayout.FilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">-->
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.FilledBox</item>-->
+
+<!--        <item name="boxStrokeColor">@color/m3_textfield_stroke_color</item>-->
+<!--        <item name="boxStrokeErrorColor">@macro/m3_comp_filled_text_field_error_active_indicator_color</item>-->
+<!--        <item name="boxBackgroundColor">@color/m3_textfield_filled_background_color</item>-->
+<!--        <item name="helperTextTextColor">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="counterTextColor">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="counterOverflowTextColor">@macro/m3_comp_filled_text_field_error_supporting_text_color</item>-->
+<!--        <item name="hintTextColor">@color/m3_textfield_label_color</item>-->
+<!--        <item name="android:textColorHint">@color/m3_textfield_label_color</item>-->
+<!--        <item name="placeholderTextColor">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="prefixTextColor">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="suffixTextColor">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="errorTextColor">@macro/m3_comp_filled_text_field_error_supporting_text_color</item>-->
+<!--        <item name="errorIconTint">@macro/m3_comp_filled_text_field_error_trailing_icon_color</item>-->
+<!--        <item name="startIconTint">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="endIconTint">@color/m3_textfield_indicator_text_color</item>-->
+<!--        <item name="passwordToggleDrawable">@drawable/m3_password_eye</item>-->
+
+
+<!--        <item name="counterTextAppearance">@macro/m3_comp_outlined_text_field_supporting_text_type</item>-->
+<!--        <item name="counterOverflowTextAppearance">@macro/m3_comp_outlined_text_field_supporting_text_type</item>-->
+<!--        <item name="errorTextAppearance">@macro/m3_comp_outlined_text_field_supporting_text_type</item>-->
+<!--        <item name="helperTextTextAppearance">@macro/m3_comp_outlined_text_field_supporting_text_type</item>-->
+<!--        <item name="hintTextAppearance">@macro/m3_comp_outlined_text_field_supporting_text_type</item>-->
+
+<!--        <item name="placeholderTextAppearance">@macro/m3_comp_filled_text_field_input_text_type</item>-->
+<!--        <item name="prefixTextAppearance">?attr/textAppearanceTitleMedium</item>-->
+<!--        <item name="suffixTextAppearance">?attr/textAppearanceTitleMedium</item>-->
+<!--        <item name="shapeAppearance">@macro/m3_comp_filled_text_field_container_shape</item>-->
+<!--        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Material3.Corner.Top</item>-->
+<!--    </style>-->
 </resources>
